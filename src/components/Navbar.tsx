@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const navItems = [
   { name: 'Home', href: '#' },
+  { name: 'About', href: '#' },
   { name: 'Projects', href: '#' },
   { name: 'Skills', href: '#' },
-  { name: 'About', href: '#' },
   { name: 'Contact', href: '#' },
 ]
 
@@ -59,7 +59,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <>
+    <div>
       <style>{styles}</style>
       <nav className="bg-gray-900 text-white shadow-md">
         <div className="container mx-auto px-4">
@@ -74,6 +74,7 @@ export default function Navbar() {
                   href={item.href}
                   className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300 ease-in-out group link-underline"
                 >
+                  {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
                   <span className="text-gray-500 font-mono mr-1 pr-2">//</span>
                   {item.name}
                 </Link>
@@ -106,6 +107,7 @@ export default function Navbar() {
                 className="block text-gray-300 hover:text-white hover:bg-gray-800 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ease-in-out group link-underline"
                 onClick={() => setIsOpen(false)}
               >
+                {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
                 <span className="text-gray-500 font-mono mr-1">//</span>
                 {item.name}
               </Link>
@@ -113,6 +115,6 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   )
 }
