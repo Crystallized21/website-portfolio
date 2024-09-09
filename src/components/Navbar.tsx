@@ -5,11 +5,11 @@ import { Menu, X } from 'lucide-react'
 import Link from "next/link";
 
 const navItems = [
-  { name: 'Home', href: '#' },
-  { name: 'About', href: '#' },
-  { name: 'Projects', href: '#' },
-  { name: 'Skills', href: '#' },
-  { name: 'Contact', href: '#' },
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Projects', href: '/projects' },
+  { name: 'Skills', href: '/skills' },
+  { name: 'Contact', href: '/contact' },
 ]
 
 const styles = `
@@ -61,10 +61,10 @@ export default function Navbar() {
   return (
     <div>
       <style>{styles}</style>
-      <nav className="bg-gray-900 text-white shadow-md">
+      <nav className="bg-gray-900 text-white shadow-md sticky top-0">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <Link href="#" className="text-xl font-bold font-mono">{'<Portfolio />'}</Link>
+            <Link href="#" className="text-xl font-bold font-mono">{'Michael Bui'}</Link>
 
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-6">
