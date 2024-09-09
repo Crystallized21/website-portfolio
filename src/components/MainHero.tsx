@@ -19,7 +19,7 @@ export function MainHero() {
       } else {
         clearInterval(typingInterval)
       }
-    }, 100)
+    }, 60)
 
     return () => clearInterval(typingInterval)
   }, [])
