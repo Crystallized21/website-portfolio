@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import Link from "next/link";
+import Link from "next/link"
+import '../styles/Navbar.css'
 
 const navItems = [
   { name: 'Home', href: '/' },
@@ -11,49 +12,6 @@ const navItems = [
   { name: 'Skills', href: '/skills' },
   { name: 'Contact', href: '/contact' },
 ]
-
-const styles = `
-  @keyframes rotate-180 {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(180deg);
-    }
-  }
-  
-  .animate-rotate-180 {
-    animation: rotate-180 0.3s ease-in-out;
-  }
-
-  .link-underline {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .link-underline::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .link-underline:hover::after {
-    transform: scaleX(1);
-  }
-
-  .link-underline:not(:hover)::after {
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
-    transform: scaleX(0);
-  }
-`
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -73,13 +31,12 @@ export default function Navbar() {
 
   return (
     <div>
-      <style>{styles}</style>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled ? 'bg-gray-900/95 shadow-lg backdrop-blur-sm' : 'bg-gray-900'
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <Link href="#" className="text-xl font-bold font-mono text-white">{'Michael Bui'}</Link>
+            <Link href="/" className="text-xl font-bold font-mono text-white">{'Michael Bui'}</Link>
 
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-6">

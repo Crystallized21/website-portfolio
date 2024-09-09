@@ -19,7 +19,7 @@ export function MainHero() {
       } else {
         clearInterval(typingInterval)
       }
-    }, 100)
+    }, 60)
 
     return () => clearInterval(typingInterval)
   }, [])
@@ -44,7 +44,7 @@ export function MainHero() {
               <a href="https://www.linkedin.com/in/michael-bui-crystal" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
                 <FaLinkedin size={24} />
               </a>
-              <a href="mailto:" className="text-gray-300 hover:text-white transition-colors">
+              <a href="mailto:michael.bui_crystal@outlook.com" className="text-gray-300 hover:text-white transition-colors">
                 <MdOutlineMailOutline size={24} />
               </a>
             </div>

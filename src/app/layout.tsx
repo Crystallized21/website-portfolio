@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import React from "react";
+import Layout from "@/components/Layout";
 
 export const metadata: Metadata = {
   title: "Michael Bui",
@@ -17,7 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
           <Navbar/>
-          {children}
+          <Layout>
+            {children}
+          </Layout>
       </body>
     </html>
   );
