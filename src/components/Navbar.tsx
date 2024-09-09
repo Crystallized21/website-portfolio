@@ -1,15 +1,15 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import Link from "next/link";
 
 const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
-  { name: 'Projects', href: '/projects' },
-  { name: 'Skills', href: '/skills' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Home', href: '#' },
+  { name: 'Projects', href: '#' },
+  { name: 'Skills', href: '#' },
+  { name: 'About', href: '#' },
+  { name: 'Contact', href: '#' },
 ]
 
 const styles = `
@@ -57,14 +57,29 @@ const styles = `
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   return (
     <div>
       <style>{styles}</style>
-      <nav className="bg-gray-900 text-white shadow-md sticky top-0">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? 'bg-gray-900/95 shadow-lg backdrop-blur-sm' : 'bg-gray-900'
+      }`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <Link href="#" className="text-xl font-bold font-mono">{'Michael Bui'}</Link>
+            <Link href="#" className="text-xl font-bold font-mono text-white">{'Michael Bui'}</Link>
 
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-6">
@@ -115,6 +130,8 @@ export default function Navbar() {
           </div>
         </div>
       </nav>
+      {/* Spacer to prevent content from going under the navbar */}
+      <div className="h-16"></div>
     </div>
   )
 }
