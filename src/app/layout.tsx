@@ -2,7 +2,6 @@ import type {Metadata} from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import React from "react";
-import {AnimatePresence} from "framer-motion";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,10 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <AnimatePresence mode="wait">
           <Navbar/>
           {children}
-        </AnimatePresence>
       </body>
     </html>
   );
