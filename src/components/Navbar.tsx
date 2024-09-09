@@ -36,7 +36,7 @@ export default function Navbar() {
       }`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-16">
-            <Link href="#" className="text-xl font-bold font-mono text-white">{'Michael Bui'}</Link>
+            <Link href="/" className="text-xl font-bold font-mono text-white">{'Michael Bui'}</Link>
 
             {/* Desktop menu */}
             <div className="hidden md:flex space-x-6">
