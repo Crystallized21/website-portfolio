@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { MdOutlineMailOutline } from "react-icons/md";
+import {useEffect, useState} from 'react'
+import {FaGithub, FaLinkedin} from "react-icons/fa";
+import {MdOutlineMailOutline} from "react-icons/md";
+import {ChevronDown} from "lucide-react";
 
-const technologies = ['React', 'TypeScript', 'Node.js', 'C#', 'Python', 'Java 💀']
+const technologies = ['React', 'TypeScript', 'C#', 'Python', 'Java 💀']
 
 export function MainHero() {
   const [typedText, setTypedText] = useState('')
@@ -24,6 +25,13 @@ export function MainHero() {
     return () => clearInterval(typingInterval)
   }, [])
 
+  const scrollToAbout = () => {
+    const aboutSection = document.getElementById('about-section')
+    if (aboutSection) {
+      aboutSection.scrollIntoView({behavior: 'smooth'})
+    }
+  }
+
   return (
     <div className="bg-gray-900 text-white min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-4 py-16">
@@ -38,14 +46,16 @@ export function MainHero() {
               <span className="animate-blink">|</span>
             </p>
             <div className="flex space-x-4">
-              <a href="https://github.com/Crystallized21" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+              <a href="https://github.com/Crystallized21" target="_blank" rel="noopener noreferrer"
+                 className="text-gray-300 hover:text-white transition-colors">
                 <FaGithub size={24}/>
               </a>
-              <a href="https://www.linkedin.com/in/michael-bui-crystal" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
-                <FaLinkedin size={24} />
+              <a href="https://www.linkedin.com/in/michael-bui-crystal" target="_blank" rel="noopener noreferrer"
+                 className="text-gray-300 hover:text-white transition-colors">
+                <FaLinkedin size={24}/>
               </a>
               <a href="mailto:" className="text-gray-300 hover:text-white transition-colors">
-                <MdOutlineMailOutline size={24} />
+                <MdOutlineMailOutline size={24}/>
               </a>
             </div>
           </div>
@@ -71,6 +81,36 @@ export function MainHero() {
           </div>
         </div>
       </div>
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2">
+        <button
+          onClick={scrollToAbout}
+          aria-label="Scroll to About section"
+          className="group relative w-12 h-20 flex items-center justify-center overflow-hidden"
+        >
+          <div
+            className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-800 to-gray-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300"/>
+          <ChevronDown
+            size={36}
+            className="text-white group-hover:text-green-400 transition-colors z-10 animate-bounce-slow"
+          />
+        </button>
+      </div>
+      <style jsx global>{`
+          @keyframes bounce-slow {
+              0%, 100% {
+                  transform: translateY(-25%);
+                  animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+              }
+              50% {
+                  transform: translateY(0);
+                  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+              }
+          }
+
+          .animate-bounce-slow {
+              animation: bounce-slow 2s infinite;
+          }
+      `}</style>
     </div>
   )
 }
