@@ -54,15 +54,16 @@ export function AboutMe() {
   }, [])
 
   return (
-    <section id="about-section" ref={sectionRef} className="bg-gray-950 py-16 text-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8 text-center">
+    <section id="about-section" ref={sectionRef} className="relative bg-gray-800 text-white min-h-screen flex items-center">
+      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-gray-800 to-transparent"></div>
+      <div className="container mx-auto px-4 py-24">
+        <h2 className="text-4xl font-bold mb-12 text-center">
           <span className="text-green-400">{'<'}</span>
           About Me
           <span className="text-green-400">{' />'}</span>
         </h2>
         <div className={`transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className="text-xl font-semibold mb-4">My Journey</h3>
               <p className="text-gray-300 mb-4">
@@ -70,14 +71,14 @@ export function AboutMe() {
                 create what I like to build. I&apos;m always eager to learn new things and improve my skills.
               </p>
               <h3 className="text-xl font-semibold mb-4">Skills</h3>
-              <div className="space-y-2">
+              <div className="space-y-8">
                 {skills.map((skill) => (
                   <div key={skill.name} className="flex flex-col">
                     <div className="flex justify-between mb-1">
                       <span>{skill.name}</span>
                       <span>{skill.level}%</span>
                     </div>
-                    <div className="w-full bg-gray-700 rounded-full h-2.5">
+                    <div className="w-full bg-gray-700 rounded-full h-3">
                       <div
                         className="bg-green-400 h-2.5 rounded-full transition-all duration-1000 ease-out"
                         style={{width: isVisible ? `${skill.level}%` : '0%'}}
@@ -93,7 +94,7 @@ export function AboutMe() {
                 {experiences.map((exp, index) => (
                   <div
                     key={index}
-                    className={`bg-gray-700 p-4 rounded-lg transition-all duration-500 ${
+                    className={`bg-gray-700 p-6 rounded-lg transition-all duration-500 ${
                       isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
                     }`}
                     style={{transitionDelay: `${index * 200}ms`}}

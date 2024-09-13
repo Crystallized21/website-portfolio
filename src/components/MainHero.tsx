@@ -1,9 +1,9 @@
 'use client'
 
 import {useEffect, useState} from 'react'
-import {FaGithub, FaLinkedin} from "react-icons/fa";
-import {MdOutlineMailOutline} from "react-icons/md";
-import {ChevronDown} from "lucide-react";
+import {FaGithub, FaLinkedin} from "react-icons/fa"
+import {MdOutlineMailOutline} from "react-icons/md"
+import {ChevronDown} from "lucide-react"
 
 const technologies = ['React', 'TypeScript', 'C#', 'Python', 'Java 💀']
 
@@ -33,7 +33,7 @@ export function MainHero() {
   }
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col justify-center">
+    <div className="bg-gray-900 text-white min-h-screen flex flex-col justify-center relative">
       <div className="container mx-auto px-4 py-16">
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
@@ -95,6 +95,7 @@ export function MainHero() {
           />
         </button>
       </div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-gray-800"/>
       <style jsx global>{`
           @keyframes bounce-slow {
               0%, 100% {
