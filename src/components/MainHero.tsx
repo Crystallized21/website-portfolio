@@ -7,23 +7,53 @@ import {ChevronDown} from "lucide-react"
 
 const technologies = ['React', 'TypeScript', 'C#', 'Python', 'Java 💀']
 
+const typingTexts = [
+  "I'm just an ordinary developer.",
+  "I'm passionate about clean code.",
+  "It's not a bug, it's a feature.",
+  "I love to learn new things.",
+  "Yeah, I don't know what to type anymore.",
+]
+
 export function MainHero() {
   const [typedText, setTypedText] = useState('')
-  const fullText = "I'm just an ordinary developer."
+  const [textIndex, setTextIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [isWaiting, setIsWaiting] = useState(false)
 
   useEffect(() => {
-    let i = 0
-    const typingInterval = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText(fullText.slice(0, i + 1))
-        i++
-      } else {
-        clearInterval(typingInterval)
-      }
-    }, 60)
+    let timer: NodeJS.Timeout
 
-    return () => clearInterval(typingInterval)
-  }, [])
+    const handleTyping = () => {
+      const currentText = typingTexts[textIndex]
+
+      if (isWaiting) {
+        timer = setTimeout(() => {
+          setIsWaiting(false)
+          setIsDeleting(true)
+        }, 2000)
+      } else if (isDeleting) {
+        setTypedText(prev => prev.slice(0, -1))
+        timer = setTimeout(handleTyping, 20)
+
+        if (typedText === '') {
+          setIsDeleting(false)
+          setTextIndex(prev => (prev + 1) % typingTexts.length)
+        }
+      } else {
+        setTypedText(prev => currentText.slice(0, prev.length + 1))
+        timer = setTimeout(handleTyping, 50)
+
+        if (typedText === currentText) {
+          setIsWaiting(true)
+        }
+      }
+    }
+
+    timer = setTimeout(handleTyping, 50)
+
+    return () => clearTimeout(timer)
+  }, [typedText, isDeleting, textIndex, isWaiting])
 
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about-section')
