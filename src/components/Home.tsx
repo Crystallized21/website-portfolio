@@ -2,9 +2,16 @@
 
 import {useState} from 'react'
 import {Briefcase, Home, Mail, Menu, Monitor, User, X} from 'lucide-react'
-import {FaGithub} from "react-icons/fa"
 import { Icon } from '@iconify/react';
 import Image from "next/image";
+import {
+  DropdownMenu,
+  DropdownMenuContent, DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger
+} from "@/components/ui/dropdown-menu";
+import {ModeToggle} from "@/components/ModeToggle";
 
 const navLinks = [
   {name: 'Home', icon: <Home className="w-5 h-5"/>, url: '/'},
@@ -47,7 +54,7 @@ const socialLinks = [
 ]
 
 export default function UpdatedDarkPortfolioLayoutWithTopIcons() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <div className="bg-black text-white min-h-screen p-6">
@@ -57,31 +64,21 @@ export default function UpdatedDarkPortfolioLayoutWithTopIcons() {
           <Home/>
         </a>
         <div className="flex items-center space-x-4">
-          <a href="#"
-             className="hover:text-gray-300 transition-colors p-2 rounded-lg hover:bg-white hover:bg-opacity-10">
-            <Monitor/>
-          </a>
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="hover:text-gray-300 transition-colors p-2 rounded-lg hover:bg-white hover:bg-opacity-10"
-          >
-            {isMenuOpen ? <X/> : <Menu/>}
-          </button>
+          <ModeToggle/>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="hover:text-gray-300 transition-colors p-2 rounded-lg hover:bg-white hover:bg-opacity-10">
+              <Menu/>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Profile</DropdownMenuItem>
+              <DropdownMenuItem>Billing</DropdownMenuItem>
+              <DropdownMenuItem>Team</DropdownMenuItem>
+              <DropdownMenuItem>Subscription</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        {isMenuOpen && (
-          <div className="absolute top-full right-0 mt-2 w-48 bg-gray-900 rounded-lg shadow-lg overflow-hidden">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.url}
-                className="flex items-center space-x-2 px-4 py-2 hover:bg-gray-800 transition-colors"
-              >
-                {link.icon}
-                <span>{link.name}</span>
-              </a>
-            ))}
-          </div>
-        )}
       </nav>
 
       <main className="max-w-7xl mx-auto flex flex-col md:flex-row items-start">

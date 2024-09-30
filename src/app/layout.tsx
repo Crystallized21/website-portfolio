@@ -1,6 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import React from "react";
+import {ThemeProvider} from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Michael Bui",
@@ -15,7 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
+        </ThemeProvider>
       </body>
     </html>
   );
