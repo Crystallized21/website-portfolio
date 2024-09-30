@@ -1,8 +1,8 @@
 import React from "react";
-import SimplifiedDarkPortfolio from "@/components/Home";
+import HomePageHero from "@/components/HomePageHero";
 
 export default function Page() {
   return (
-    <SimplifiedDarkPortfolio/>
+    <HomePageHero/>
   );
 }

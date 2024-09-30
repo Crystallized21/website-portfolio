@@ -43,6 +43,8 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --hover-outline-color: initial;
+    --card-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px -1px rgba(0,0,0,.1)
   }
 
   .dark {
@@ -70,6 +72,7 @@ body {
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+    --card-shadow: none;
   }
 }
 
@@ -80,4 +83,8 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+a:hover {
+  outline: 2px solid var(--hover-outline-color);
 }
