@@ -1,12 +1,8 @@
 import React from "react";
-import {MainHero} from "@/components/MainHero";
-import {AboutMe} from "@/components/AboutMe";
+import SimplifiedDarkPortfolio from "@/components/Home";
 
-export default function Home() {
+export default function Page() {
   return (
-    <main className="bg-gray-900 min-h-screen">
-      <MainHero/>
-      <AboutMe/>
-    </main>
+    <SimplifiedDarkPortfolio/>
   );
 }
