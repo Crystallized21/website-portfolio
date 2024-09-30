@@ -3,6 +3,7 @@
 import {useState} from 'react'
 import {Briefcase, Home, Mail, Menu, Monitor, User, X} from 'lucide-react'
 import {FaGithub} from "react-icons/fa"
+import { Icon } from '@iconify/react';
 import Image from "next/image";
 
 const navLinks = [
@@ -14,32 +15,32 @@ const navLinks = [
 
 const socialLinks = [
   {
-    name: 'Github',
-    icon: <FaGithub className="w-8 h-8"/>,
+    name: 'GitHub',
+    icon: <Icon icon="skill-icons:github-dark" className="w-8 h-8"/>,
     username: '@Crystallized21',
     url: 'https://github.com/Crystallized21'
   },
   {
-    name: 'Github',
-    icon: <FaGithub className="w-8 h-8"/>,
+    name: 'GitHub',
+    icon: <Icon icon="skill-icons:github-dark" className="w-8 h-8"/>,
     username: '@Crystallized21',
     url: 'https://github.com/Crystallized21'
   },
   {
-    name: 'Github',
-    icon: <FaGithub className="w-8 h-8"/>,
+    name: 'GitHub',
+    icon: <Icon icon="skill-icons:github-dark" className="w-8 h-8"/>,
     username: '@Crystallized21',
     url: 'https://github.com/Crystallized21'
   },
   {
-    name: 'Github',
-    icon: <FaGithub className="w-8 h-8"/>,
+    name: 'GitHub',
+    icon: <Icon icon="skill-icons:github-dark" className="w-8 h-8"/>,
     username: '@Crystallized21',
     url: 'https://github.com/Crystallized21'
   },
   {
-    name: 'Github',
-    icon: <FaGithub className="w-8 h-8"/>,
+    name: 'GitHub',
+    icon: <Icon icon="skill-icons:github-dark" className="w-8 h-8"/>,
     username: '@Crystallized21',
     url: 'https://github.com/Crystallized21'
   },
