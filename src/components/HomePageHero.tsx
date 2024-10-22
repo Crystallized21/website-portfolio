@@ -10,10 +10,10 @@ import Link from "next/link";
 import React from "react";
 
 const navLinks = [
-  {name: 'Home', icon: <Home className="w-5 h-5"/>, url: '/'},
-  {name: 'Profile', icon: <User className="w-5 h-5"/>, url: '/profile'},
-  {name: 'Projects', icon: <Briefcase className="w-5 h-5"/>, url: '/projects'},
-  {name: 'Contact', icon: <Mail className="w-5 h-5"/>, url: '/contact'},
+  {name: 'Home', icon: <Home className="w-8 h-8"/>, url: '/'},
+  {name: 'Profile', icon: <User className="w-8 h-8"/>, url: '/profile'},
+  {name: 'Projects', icon: <Briefcase className="w-8 h-8"/>, url: '/projects'},
+  {name: 'Contact', icon: <Mail className="w-8 h-8"/>, url: '/contact'},
 ]
 
 const socialLinks = [
@@ -30,14 +30,15 @@ export default function HomePageHero() {
   return (
     <div className="bg-background text-foreground min-h-screen p-6">
       <nav className="flex justify-between items-center mb-12 relative ">
-        <Button variant="ghost" size="icon">
-          <Home/>
-        </Button>
+        <Link href="/" className="flex items-center">
+          <Button variant="ghost" size="icon">
+            <Home/>
+          </Button>
+        </Link>
         <div className="flex items-center space-x-4">
           <ModeToggle/>
-          {/*TODO: Make Dropdown bigger*/}
           <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu/>
               </Button>
