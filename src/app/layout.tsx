@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import React from "react";
+import {ThemeProvider} from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Michael Bui",
@@ -16,8 +16,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-          <Navbar/>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           {children}
+        </ThemeProvider>
       </body>
     </html>
   );
