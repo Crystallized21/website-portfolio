@@ -25,6 +25,7 @@ const Page = () => {
             </p>
           </div>
         </main>
+        
 
         <footer className="mt-12 text-center text-sm text-gray-500">
           <p>2025 Crystallized Project.</p>
