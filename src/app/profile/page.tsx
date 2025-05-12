@@ -10,7 +10,7 @@ const Page = () => {
         <main className="max-w-7xl mx-auto flex flex-col md:flex-row items-start">
           <MeSection/>
 
-          <div className="mx-16 mt-8 items-center">
+          <div className="mt-8 items-start max-w-3xl">
             <h2 className="text-2xl font-bold mb-4">About Me</h2>
             <p>
               I mess around and find out with tech. Not just JavaScript — sometimes it’s Vulkan, graphics stuff, Python
