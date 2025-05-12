@@ -21,7 +21,7 @@ const Page = () => {
             <p>
               When I&apos;m not coding, you can find me exploring new technologies, possibly to open-source projects
               (rarely), or going outside and touching grass. I believe in continuous learning and pushing the boundaries
-              of what&apos;s possible on the web.
+              of what&apos;s possible that I can achieve in the digital space.
             </p>
           </div>
         </main>
