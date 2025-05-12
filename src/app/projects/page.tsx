@@ -14,7 +14,7 @@ const projects = [
 	{
 		title: "Digital Marketplace",
 		description: "A platform for buying and selling digital goods.",
-		technologies: ["React", "Node.js", "MongoDB"],
+		technologies: ["React", "Next.js", "MongoDB", "Tailwind CSS"],
 		link: "#",
 	},
 ];
