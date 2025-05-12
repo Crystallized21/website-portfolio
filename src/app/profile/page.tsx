@@ -19,13 +19,12 @@ const Page = () => {
             </p>
             <br/>
             <p>
-              When I'm not coding, you can find me exploring new technologies, possibly to open-source projects
+              When I&apos;m not coding, you can find me exploring new technologies, possibly to open-source projects
               (rarely), or going outside and touching grass. I believe in continuous learning and pushing the boundaries
-              of what's possible on the web.
+              of what&apos;s possible on the web.
             </p>
           </div>
         </main>
-        
 
         <footer className="mt-12 text-center text-sm text-gray-500">
           <p>2025 Crystallized Project.</p>
