@@ -27,6 +27,7 @@
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@iconify-icon/react": "^2.1.0",
     "@iconify/react": "^5.0.2",
     "@types/node": "^20",
