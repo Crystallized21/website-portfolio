@@ -52,7 +52,7 @@ export default function HomePage() {
 			</main>
 
 			<footer className="mt-12 text-center text-sm text-gray-500">
-				<p>2024 Crystallized Project.</p>
+				<p>2025 Crystallized Project.</p>
 			</footer>
 		</div>
 	)
