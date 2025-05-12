@@ -1,14 +1,20 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
-import { MeSection } from "@/components/MeSection";
+import {MeSection} from "@/components/MeSection";
 import Link from "next/link";
-import { Icon } from "@iconify/react";
+import {Icon} from "@iconify/react";
 
 const projects = [
 	{
 		title: "Personal Website",
 		description: "The website your on right now.",
 		technologies: ["Next.js", "Tailwind CSS", "React"],
+		link: "#",
+	},
+	{
+		title: "Digital Marketplace",
+		description: "A platform for buying and selling digital goods.",
+		technologies: ["React", "Node.js", "MongoDB"],
 		link: "#",
 	},
 ];
@@ -36,7 +42,7 @@ const Page = () => {
 										<p className="text-gray-500 dark:text-gray-400 mb-4">
 											{project.description}
 										</p>
-										<div className="flex flex-wrap gap-2 mb-4">
+										<div className="flex flex-wrap gap-2">
 											{project.technologies.map((tech, techIndex) => (
 												<span
 													key={techIndex}
@@ -46,13 +52,15 @@ const Page = () => {
 												</span>
 											))}
 										</div>
-										<Link
-											href={project.link}
-											className="text-sm font-medium hover:underline flex items-center gap-1"
-										>
-											View Project{" "}
-											<Icon icon="lucide:external-link" className="w-4 h-4" />
-										</Link>
+										{project.link !== "#" && (
+											<Link
+												href={project.link}
+												className="text-sm font-medium hover:underline flex items-center gap-1 mt-2"
+											>
+												View Project{" "}
+												<Icon icon="lucide:external-link" className="w-4 h-4" />
+											</Link>
+										)}
 									</div>
 								))}
 							</div>
