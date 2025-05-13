@@ -1,14 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Briefcase, Home, Mail, Menu, User } from "lucide-react";
-import { ModeToggle } from "@/components/ModeToggle";
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import {Button} from "@/components/ui/button";
+import {Briefcase, Home, Mail, Menu, User} from "lucide-react";
+import {ModeToggle} from "@/components/ModeToggle";
+import {DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger,} from "@/components/ui/dropdown-menu";
+import {MdOutlineCameraAlt} from "react-icons/md";
 
 const navLinks = [
 	{ name: "Home", icon: <Home className="w-8 h-8" />, url: "/" },
@@ -23,12 +19,20 @@ const navLinks = [
 
 const Navbar = () => {
 	return (
-		<nav className="flex justify-between items-center mb-12 relative ">
-			<Link href="/" className="flex items-center">
-				<Button variant="ghost" size="icon">
-					<Home />
-				</Button>
-			</Link>
+		<nav className="flex justify-between items-center mb-12 relative">
+			<div className="flex items-center space-x-2">
+				<Link href="/" className="flex items-center">
+					<Button variant="ghost" size="icon">
+						<Home />
+					</Button>
+				</Link>
+				<Link href="/" className="flex items-center ">
+					<Button variant="ghost">
+						<MdOutlineCameraAlt />
+						My Photography (In Development)
+					</Button>
+				</Link>
+			</div>
 			<div className="flex items-center space-x-4">
 				<ModeToggle />
 				<DropdownMenu>
