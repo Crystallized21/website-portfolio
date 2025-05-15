@@ -26,10 +26,10 @@ const Navbar = () => {
 						<Home />
 					</Button>
 				</Link>
-				<Link href="/" className="flex items-center ">
+				<Link href="https://gallery.crystallized.sh" className="flex items-center">
 					<Button variant="ghost">
 						<MdOutlineCameraAlt />
-						My Photography (In Development)
+						My Photography
 					</Button>
 				</Link>
 			</div>
