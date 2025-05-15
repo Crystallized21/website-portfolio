@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import React from "react";
 import { ThemeProvider } from "@/components/theme-provider";
+import {Analytics} from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
 	title: "Michael Bui",
@@ -25,6 +26,7 @@ export default function RootLayout({
 					enableSystem
 				>
 					{children}
+					<Analytics/>
 				</ThemeProvider>
 			</body>
 		</html>
