@@ -25,6 +25,9 @@ const Page = () => {
             </p>
           </div>
         </main>
+				<div className="text-sm text-center text-gray-100 dark:text-gray-900 mt-4">
+					<p>If your reading this, I like NieR Automata a lot. ;)</p>
+				</div>
 
         <footer className="mt-12 text-center text-sm text-gray-500">
           <p>2025 Crystallized Project.</p>
